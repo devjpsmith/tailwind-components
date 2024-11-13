@@ -1,6 +1,7 @@
 import InfoTile from "./components/InfoTile.jsx";
 import {MdOutlinePaid, MdOutlineShoppingCart, MdSupervisorAccount} from "react-icons/md";
 import TaskCard from "./components/tasks/TaskCard.jsx";
+import DailyAgenda from "./components/tasks/DailyAgenda.jsx";
 
 export default function App() {
     const tiles = [
@@ -63,9 +64,51 @@ export default function App() {
 
         }
     ];
+    const agendaRows = [
+        {
+            time: '10:00',
+            agendaItem: {
+                title: 'ZeCoin Meeting',
+                from: '10:00',
+                to: '10:30',
+                color: 'bg-sky-200',
+                units: 'col-span-2'
+            }
+        },
+        {
+            time: '11:00',
+            agendaItem: {
+                title: 'Mobile Developer\'s Meeting',
+                from: '11:00',
+                to: '12:00',
+                color: 'bg-orange-200',
+                units: 'col-span-4'
+            }
+        },
+        {
+            time: '12:00',
+            agendaItem: {
+                title: 'Client Call',
+                from: '12:00',
+                to: '12:30',
+                color: 'bg-lime-200',
+                units: 'col-span-2'
+            }
+        },
+        {
+            time: '13:00',
+            agendaItem: {
+                title: 'Backend Team Meeting',
+                from: '13:00',
+                to: '13:45',
+                color: 'bg-yellow-200',
+                units: 'col-span-3'
+            }
+        }
+    ];
     return (
-        <div className="container">
-            <div className="flex gap-3 mb-4">
+        <div className="container flex flex-col gap-4 mt-2">
+            <div className="flex justify-center gap-3">
                 {tiles.map(tile => <InfoTile
                     key={tile.id}
                     title={tile.title}
@@ -75,8 +118,13 @@ export default function App() {
                     icon={tile.icon}
                 />)}
             </div>
-            <div className="flex gap-6">
+            <div className="flex justify-center gap-6">
                 {cards.map(card => <TaskCard key={card.id} card={card} />)}
+            </div>
+            <div className="grid grid-cols-12">
+                <div className="col-span-4 col-start-5">
+                    <DailyAgenda agendaRows={agendaRows} />
+                </div>
             </div>
         </div>
     )
