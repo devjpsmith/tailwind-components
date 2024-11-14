@@ -1,19 +1,29 @@
-import React from 'react';
+import React from 'react'
 
-function ProgressMarker({completed, total, percentage}) {
+function ProgressMarker({ completed, total, percentage }) {
     return (
         <>
             <div className="flex">
                 <div>
-                    <p className="text-sm text-gray-400">Tasks Done: <span className="text-gray-600">{completed}/{total}</span></p>
+                    <p className="text-sm text-gray-400">
+                        Tasks Done:{' '}
+                        <span className="text-gray-600">
+                            {completed}/{total}
+                        </span>
+                    </p>
                 </div>
-                <div className="flex flex-grow justify-end"><p className="text-sm text-gray-400">{percentage}%</p></div>
+                <div className="flex flex-grow justify-end">
+                    <p className="text-sm text-gray-400">{percentage}%</p>
+                </div>
             </div>
-            <div className="bg-gray-100 w-full rounded-sm h-1">
-                <div className="bg-sky-500 rounded-sm h-1" style={{ width: percentage + '%'}}></div>
+            <div className="h-1 w-full rounded-sm bg-gray-100">
+                <div
+                    className="h-1 rounded-sm bg-sky-500"
+                    style={{ width: percentage + '%' }}
+                ></div>
             </div>
         </>
-    );
+    )
 }
 
-export default ProgressMarker;
+export default ProgressMarker

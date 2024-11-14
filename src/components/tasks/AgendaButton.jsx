@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
 function AgendaButton(props) {
     return (
-        <div className="rounded-full bg-slate-700 text-white font-light px-2 py-1 cursor-pointer">
+        <div className="cursor-pointer rounded-full bg-slate-700 px-2 py-1 font-light text-white">
             + Add Task
         </div>
-    );
+    )
 }
 
-export default AgendaButton;
+export default AgendaButton
