@@ -123,7 +123,7 @@ export default function App() {
                     />
                 ))}
             </div>
-            <div className="flex justify-center gap-6">
+            <div className="grid grid-cols-1 justify-items-center gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {cards.map((card) => (
                     <TaskCard key={card.id} card={card} />
                 ))}

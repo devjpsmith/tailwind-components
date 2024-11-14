@@ -6,7 +6,7 @@ import { MdChatBubbleOutline } from 'react-icons/md'
 
 function TaskCard({ card }) {
     return (
-        <div className="flex w-64 flex-col gap-2 rounded-lg border border-gray-300 px-2 py-4 shadow-md">
+        <div className="flex w-64 min-w-64 flex-col gap-2 rounded-lg border border-gray-300 px-2 py-4 shadow-md">
             <div className="grid h-8 grid-cols-2 items-center">
                 <div>
                     <CardTitle logo={card.logo} name={card.name} />
